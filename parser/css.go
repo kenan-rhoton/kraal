@@ -25,11 +25,11 @@ func ParseCSS(input string) *StyleSheet {
 		}
 		sel, err := EatSelectors(p)
 		if err != nil {
-			continue
+			return css
 		}
 		dec, err := EatDeclarations(p)
 		if err != nil {
-			continue
+			return css
 		}
 		css.AddRule(sel, dec)
 	}
