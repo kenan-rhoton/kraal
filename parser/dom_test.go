@@ -4,8 +4,7 @@ import ()
 
 func ExampleOneLine() {
 	testdata := "<html><head><title>YO!</title></head><body><h1>lol</h1>dis<elem/></body></html>"
-	p := Load(testdata)
-	d := p.ParseDOM()
+	d := ParseDOM(testdata)
 	d.PrettyPrint()
 	// Output:
 	// <document>
@@ -28,8 +27,7 @@ func ExampleOneLine() {
 
 func ExampleSpaced() {
 	testdata := "   \t  <html>\n\n \t<head><title>     YO!</title></head><body   ><h1>lol</h1>dis<elem /></body></html>                     "
-	p := Load(testdata)
-	d := p.ParseDOM()
+	d := ParseDOM(testdata)
 	d.PrettyPrint()
 	// Output:
 	// <document>
