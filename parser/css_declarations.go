@@ -9,6 +9,14 @@ type Declaration struct {
 	value string
 }
 
+func (d *Declaration) Name() string {
+	return d.name
+}
+
+func (d *Declaration) Value() string {
+	return d.value
+}
+
 func EatDeclName(p *Parser) string {
 	res, _ := p.EatWhile(func(r rune) bool { return r != ':' })
 	return string(res)

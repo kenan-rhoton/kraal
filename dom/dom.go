@@ -35,6 +35,10 @@ func (n *Node) Children() []*Node {
 	return n.children
 }
 
+func (n *Node) Attrs() map[string]string {
+	return n.node_type.Attrs()
+}
+
 func (n *Node) AttrString() string {
 	attrs := n.node_type.Attrs()
 	if attrs == nil {
